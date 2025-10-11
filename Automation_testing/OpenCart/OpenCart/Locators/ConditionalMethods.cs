@@ -37,14 +37,23 @@ public class ConditionalMethods
         var FemaleElement = driver.FindElement(By.XPath("//input[@id='gender-female']"));
 
         Console.WriteLine("Before selection");
-        Console.WriteLine(MaleElement.Selected);       
+        Console.WriteLine(MaleElement.Selected);
         Console.WriteLine(FemaleElement.Selected);
 
-        Console.WriteLine("After selection");
+        Console.WriteLine("After selecting male ");
         MaleElement.Click();
         Console.WriteLine(MaleElement.Selected);
         Console.WriteLine(FemaleElement.Selected);
 
+        Console.WriteLine("After selecting female ");
+        FemaleElement.Click();
+        Console.WriteLine(MaleElement.Selected);
+        Console.WriteLine(FemaleElement.Selected);
+
+
+
+        bool newslerrterStatus = driver.FindElement(By.XPath("//input[@id='Newsletter']")).Selected;
+        Console.WriteLine("Newsletter status:" + newslerrterStatus);
     }
 
     private bool closeBrowser = false;
